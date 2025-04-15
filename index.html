@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Class Attendance - University of Southern Somalia</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <img src="https://uss.edu.so/wp-content/uploads/2020/02/logo.png" alt="University Logo" class="logo">
+    <h1>Faculty of Information Technology - Attendance System</h1>
+    <nav>
+      <button onclick="showView('home')">Home</button>
+      <button onclick="showView('attendance')">Mark Attendance</button>
+      <button onclick="showView('history')">View History</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="view active">
+      <h2>Welcome</h2>
+      <p>This is the attendance system for Semester 2, March 2025.</p>
+      <p>Click "Mark Attendance" to begin recording attendance for up to 13 students.</p>
+    </section>
+
+    <section id="attendance" class="view hidden">
+      <h2>Mark Attendance</h2>
+      <label>Date: <input type="date" id="datePicker"></label>
+      <label>Period:
+        <select id="periodSelect">
+          <option>2 pm - Multimedia (Ali Mustaf)</option>
+          <option>4 pm - Upgrading PCs (Mohamed Ali)</option>
+          <option>2 pm - Networks (Mohamed Ali)</option>
+          <option>4 pm - Web Design (Eng. Mucaad)</option>
+          <option>2 pm - Business Stats (Isak Nur)</option>
+          <option>4 pm - C++ Programming (Mohamud H. Abdullahi)</option>
+          <option>2 pm - Database 1 (Mohamud Hassan Mukhtar)</option>
+          <option>4 pm - Digital Electronics (Mohamud H. Abdullahi)</option>
+        </select>
+      </label>
+      <table>
+        <thead><tr><th>Name</th><th>Status</th></tr></thead>
+        <tbody id="studentTable"></tbody>
+      </table>
+      <button onclick="saveAttendance()">Save Attendance</button>
+    </section>
+
+    <section id="history" class="view hidden">
+      <h2>Attendance History</h2>
+      <div id="historyTable"></div>
+      <button onclick="downloadCSV()">Download CSV</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
